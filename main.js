@@ -11,5 +11,5 @@ const getMoviePoster = async (imdbId) => {
   container.appendChild(newPoster);
 }
 
-const ourMovies = ['tt0099785', 'tt0107290', 'tt26443597', 'tt0108252'];
+const ourMovies = ['tt0099785', 'tt0107290', 'tt26443597', 'tt0108252', 'tt0118799', 'tt1675434', 'tt0137523', 'tt0114369'];
 ourMovies.forEach(id => getMoviePoster(id));

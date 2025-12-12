@@ -3,12 +3,13 @@ const getMoviePoster = async (imdbId) => {
   const response = await fetch(url);
   const data = await response.json();
   console.log(data);
+  let highResPoster = data.Poster.replace("SX300", "SX1000");
   let container = document.querySelector('.poster-container');
   let newPoster = document.createElement('div');
   newPoster.classList.add('movie-poster');
-  newPoster.innerHTML = `<h2>${data.Title}</h2> <img src="${data.Poster}"</img>`;
+  newPoster.innerHTML = `<h2>${data.Title}</h2> <img src="${highResPoster}"</img>`;
   container.appendChild(newPoster);
 }
 
-const ourMovies = ['tt0076759', 'tt0107290', 'tt0034583'];
+const ourMovies = ['tt0099785', 'tt0107290', 'tt26443597', 'tt0108252'];
 ourMovies.forEach(id => getMoviePoster(id));

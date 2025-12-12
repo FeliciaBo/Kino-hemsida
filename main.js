@@ -1,5 +1,5 @@
 const getMoviePoster = async (imdbId) => {
-  const url = `http://www.omdbapi.com/?i=${imdbId}&apikey=58664eb2`;
+  const url = `http://www.omdbapi.com/?i=${imdbId}&apikey=${CONFIG.OMDB_API_KEY}`;
   const response = await fetch(url);
   const data = await response.json();
   console.log(data);

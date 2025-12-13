@@ -1,0 +1,27 @@
+{
+  "name": "kino-hemsida",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FeliciaBo/Kino-hemsida.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FeliciaBo/Kino-hemsida/issues"
+  },
+  "homepage": "https://github.com/FeliciaBo/Kino-hemsida#readme",
+  "devDependencies": {
+    "sass": "^1.96.0",
+    "vite": "^7.2.7"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

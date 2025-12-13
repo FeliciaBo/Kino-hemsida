@@ -1,4 +1,2 @@
 
-const CONFIG = {
-    OMDB_API_KEY: "58664eb2"
-};
+export const OMDB_API_KEY = "58664eb2";

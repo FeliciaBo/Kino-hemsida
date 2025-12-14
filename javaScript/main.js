@@ -1,7 +1,7 @@
 import {OMDB_API_KEY} from './config.js';
 import '../sass/main.scss';
 import {header} from './header.js';
-
+import {footer} from './footer.js';
 const getMoviePoster = async (imdbId) => {
   const url = `http://www.omdbapi.com/?i=${imdbId}&apikey=${OMDB_API_KEY}`;
   const response = await fetch(url);
@@ -23,8 +23,13 @@ const getMoviePoster = async (imdbId) => {
   const headerElement = header();
   headerContainer.appendChild(headerElement);
  }
+  const footerContainer = document.querySelector('.footer-container');
+ if (footerContainer) {
+  const footerElement = footer();
+  footerContainer.appendChild(footerElement);
+ }
 
 
-const ourMovies = ['tt0099785', 'tt0107290', 'tt26443597', 'tt0108252', 'tt0118799', 'tt1675434', 'tt0137523', 'tt0114369', 'tt0110413'];
+const ourMovies = ['tt0099785', 'tt0107290', 'tt26443597', 'tt0108252', 'tt0118799', 'tt1675434', 'tt0137523', 'tt0114369', 'tt0110413', 'tt0088763', 'tt0133093', 'tt1375666'];
 ourMovies.forEach(id => getMoviePoster(id));
 

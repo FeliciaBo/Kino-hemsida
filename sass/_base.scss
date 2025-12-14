@@ -20,6 +20,10 @@ body {
     min-height: 100vh;
 }
 
+input::placeholder {
+    font-size: 1rem;
+}
+
 .site-search {
     display: flex;
     justify-content: center;
@@ -27,10 +31,25 @@ body {
     gap: 1rem;
 }
 
-.site-search input {
+.site-search__wrapper {
+    position: relative; 
+    display: inline-block;
+}
+
+.site-search__input {
     border-radius: 7px;
     width: 25rem;
     height: 3rem;
+    padding-left: 2.5rem;
+}
+
+.site-search__icon {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1.2rem;
 }
 
 h1 {

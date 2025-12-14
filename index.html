@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/javaScript/config.js" type="module" defer></script>
     <script src="/javaScript/main.js" type="module" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Kino</title>
 </head>
@@ -14,9 +15,13 @@
 <body>
     <h1>Hitta din favoritfilm!</h1>
     <div class="site-search">
-    <input type="search" placeholder=" Sök film eller genre" />
+        <div class="site-search__wrapper"><i class="site-search__icon fa fa-search"></i>
+
+            <input type="search" placeholder=" Sök film eller genre" class="site-search__input" />
+        </div>
     </div>
     <div class="poster-container"></div>
+    <div class="footer-container"></div>
 
 </body>
 

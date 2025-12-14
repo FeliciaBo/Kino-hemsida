@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    background-color: #008080;
+    border-radius: 10px;
+    margin: 2rem;
+}
+
+.header ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    list-style: none;
+    color: rgb(213, 213, 213);
+}
+
+.header img {
+    height: 75px;
+}

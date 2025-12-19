@@ -8,4 +8,7 @@ body, * {
   padding: 0;
   box-sizing: border-box;
   background-color: #080B10;
+  font-size: 16px;
+  color: white;
+  font-family: "regular Open sans", sans-serif;
 }/*# sourceMappingURL=main.css.map */

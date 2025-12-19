@@ -1,5 +1,5 @@
-@use './header';
-@use './mixins_variables';
+@use 'header';
+@use 'mixins_variables';
 
 //basic reset + setting background color
 body,* {
@@ -7,4 +7,7 @@ body,* {
     padding: 0;
     box-sizing: border-box;
     background-color: mixins_variables.$background-color;
+    font-size: 16px; // Default font size 16px = 1em
+    color: white;
+    font-family: mixins_variables.$font-body;
 }

@@ -1,2 +1,15 @@
 @use './header';
 @use './start.scss';
+@use 'mixins_variables';
+
+//basic reset + setting background color
+body,* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: mixins_variables.$background-color;
+    font-size: 16px; // Default font size 16px = 1em
+    color: white;
+    font-family: mixins_variables.$font-body;
+}
+

@@ -1,0 +1,36 @@
+//This file contains SASS mixins and variables 
+//for colors, fonts, and breakpoints
+
+// Import Open Sans font from Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+// Color Variables
+$background-color: #080B10;
+$card-color: #0E131B;
+
+$primary-text-color: #F5F7FA;
+$secondary-text-color:#626C7B;
+
+$blue-color: #179A90;
+$blue-hover-color: #39C2B7;
+
+$orange-color:#DD6031;
+$orange-hover-color:#FF7F4E;
+
+// Font Variables
+$font-header: 'bold Open sans', sans-serif;
+$font-subheader: 'semi-bold Open sans', sans-serif;
+$font-body: 'regular Open sans', sans-serif;
+
+// Breakpoint Mixins
+@mixin mobile {
+    @media screen and (min-width: 480px) { //kommer antagligen justeras
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1018px) { //kommer antagligen justeras
+        @content;
+    }
+}

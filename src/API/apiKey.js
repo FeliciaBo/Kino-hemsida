@@ -1,2 +1,1 @@
-export const OMDB_API_KEY = "58664eb2"
-
+export const TMDB_API_KEY = "520dac76149fb206187c735503b3abef";

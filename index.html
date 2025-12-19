@@ -1,16 +1,86 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="stylesheet" href="./src/SASS/main.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>kino</title>
-  </head>
-  <body>
-    <div class="header-container"></div>
-    <h1>KINO</h1>
-    <div class="poster-container-test"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kino</title>
+</head>
+
+<body>
+  <div class="header-container"></div>
+  <nav class="nav-bar"></nav>
+  <h1>KINO</h1>
+  <div class="search__bar">
+    <div class="search__input__wrapper">
+      <input class="search__bar__movie" type="text" placeholder="Search movies..." id="searchInput" />
+      <button type="button" class="search__icon-button" id="searchBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  </section>
+  <section>Slideshow</section>
+  <section>
+    <div class="button_frontpage">
+      <button class="more__movies">Mer filmer</button>
+      <button class="book__now">Boka nu</button>
+    </div>
+  </section>
+
+  <section>
+    Events
+  </section>
+
+<section>
+  <div class="disclaimer">
+    <i class="fa fa-info-circle info-icon"></i>
+    Biljetter betalas alltid på plats, bokning sker på webben, via telefon eller på plats
+  </div>
+</section>
+
+  <section>
+    Event
+  </section>
+
+  <section>
+    <div>
+      <ul>
+        <h3>Prislista</h3>
+        <li>Vuxen</li>
+        <li>barn</li>
+        <li>student</li>
+        <li>Pensionär</li>
+        <p>*Andra priser gäller under evenemang. Kontakta receptionen för mer info</p>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>På kino:</h2>
+    <ul>
+      <li> Resturang</li>
+      <li> Bar</li>
+      <li> Events</li>
+    </ul>
+    <ul>
+      <li> Barnvagnsbio</li>
+      <li> Pensionärsbio</li>
+      <li> Bubbel och chark</li>
+    </ul>
+    <ul>
+      <li> Klassiker</li>
+      <li> Barnbio</li>
+      <li> Kiosk</li>
+    </ul>
+  </section>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>

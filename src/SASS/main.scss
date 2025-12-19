@@ -1,4 +1,5 @@
-@use 'header';
+@use './header';
+@use './start.scss';
 @use 'mixins_variables';
 
 //basic reset + setting background color
@@ -11,3 +12,4 @@ body,* {
     color: white;
     font-family: mixins_variables.$font-body;
 }
+

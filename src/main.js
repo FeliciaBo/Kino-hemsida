@@ -12,8 +12,14 @@ import { initCarousel } from "./Features/carousel";
 
 await fetchToplist();
 
+const topThree = [
+  store.topList[0],
+  store.topList[2],
+  store.topList[5],
+];
+
 const root = document.querySelector("#toplist-carousel");
-initCarousel(root, store.topList);
+initCarousel(root, topThree);
 
 
 // Ladda header

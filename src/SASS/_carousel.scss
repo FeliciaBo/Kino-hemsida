@@ -1,50 +1,85 @@
-#toplist-carousel {
+.poster-frame {
   position: relative;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-
-.carousel__viewport {
-  overflow: hidden;
   width: 100%;
+  height: 70%;
+  overflow: hidden;
+  color: white;
+  border-radius: 10px;
 }
 
+.poster-frame__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  filter: blur(18px);
+  transform: scale(1.1);
+  opacity: 0.55;
+}
+
+.poster-frame__img {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+
+  height: 80%;
+  aspect-ratio: 2 / 3;
+
+  transform: translateY(-50%);
+  object-fit: cover;
+
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.poster-frame__info {
+  position: absolute;
+  top: 50%;
+  left: calc(8% + (80% * 2 / 3) + 2rem);
+  right: 0rem;
+  left: 60%;
+
+  transform: translateY(-50%);
+}
+
+.poster-frame__info h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin: 0 0 0.5rem;
+  background-color: transparent;
+}
+
+.poster-frame__info p {
+  opacity: 0.8;
+  margin: 0;
+}
+
+.carousel__slide {
+  flex: 0 0 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+}
 .carousel__track {
   display: flex;
   transition: transform 300ms ease;
   width: 100%;
 }
 
-.carousel__slide {
-  flex: 0 0 100%;
-  min-width: 0;
-  aspect-ratio: 16 / 9;
-  position: relative;
-}
-
-.movie-poster,
-.movie-poster img {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  display: block;
-}
-
-.movie-poster img {
-  object-fit: cover;
-}
-
 .carousel__btn {
   position: absolute;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 20;
+
   background: rgba(0, 0, 0, 0.6);
   color: white;
   border: none;
-  font-size: 2rem;
-  padding: 0.5rem 0.75rem;
+
+  font-size: 2.5rem;
+  line-height: 1;
+  padding: 0.4rem 0.7rem;
+  border-radius: 50%;
   cursor: pointer;
 }
 
@@ -54,4 +89,26 @@
 
 .carousel__btn--next {
   right: 1rem;
+}
+
+.carousel__viewport {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.carousel {
+  position: relative;
+  margin: 2rem;
+  width: 100%;
+}
+
+.poster-frame__info,
+.poster-frame__info h2,
+.poster-frame__info p {
+  background: transparent;
+}
+
+#toplist-carousel {
+  margin: 2rem;
 }

@@ -1,14 +1,8 @@
 import { createPoster } from "./createPoster";
 
-/**
- * Initierar en enkel loopande karusell (1 slide i taget)
- * @param {HTMLElement} root - container där karusellen ska mountas
- * @param {Array} movies - array med filmobjekt
- */
 export const initCarousel = (root, movies) => {
   if (!root || !Array.isArray(movies) || movies.length === 0) return;
 
-  // Bygg DOM-struktur
   root.innerHTML = `
     <button class="carousel__btn carousel__btn--prev">‹</button>
     <div class="carousel__viewport">
@@ -21,7 +15,6 @@ export const initCarousel = (root, movies) => {
   const prevBtn = root.querySelector(".carousel__btn--prev");
   const nextBtn = root.querySelector(".carousel__btn--next");
 
-  // Skapa slides
   movies.forEach((movie) => {
     const slide = document.createElement("div");
     slide.classList.add("carousel__slide");

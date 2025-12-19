@@ -21,3 +21,16 @@ $orange-hover-color:#FF7F4E;
 $font-header: 'bold Open sans', sans-serif;
 $font-subheader: 'semi-bold Open sans', sans-serif;
 $font-body: 'regular Open sans', sans-serif;
+
+// Breakpoint Mixins
+@mixin mobile {
+    @media screen and (min-width: 480px) { //kommer antagligen justeras
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1018px) { //kommer antagligen justeras
+        @content;
+    }
+}

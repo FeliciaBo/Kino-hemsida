@@ -1,6 +1,7 @@
 @use './header';
 @use './start.scss';
-@use 'mixins_variables';
+@use '/src/SASS/mixins_variables.scss';
+@use '/src/SASS/movie-poster.scss';
 
 //basic reset + setting background color
 body,* {
@@ -12,4 +13,3 @@ body,* {
     color: white;
     font-family: mixins_variables.$font-body;
 }
-

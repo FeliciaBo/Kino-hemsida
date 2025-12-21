@@ -1,0 +1,115 @@
+body {
+  display: block;
+  width: 100%;
+}
+
+.movies-wrapper {
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.movie__page__movies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.movie-poster {
+  display: flex;
+  flex-direction: column;
+  background-color: #0e131b;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  max-width: 220px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.movie-poster:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+}
+
+.movie-poster img {
+  width: 100%;
+  height: auto;
+
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.movie-info {
+  width: 100%;
+  padding: 0.9rem 1rem 1.1rem;
+  background-color: transparent;
+}
+
+.movie-info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+
+  column-gap: 0.5rem;
+  row-gap: 0.25rem;
+
+  width: 100%;
+  padding: 0.9rem 1rem 1.1rem;
+  background-color: transparent;
+}
+
+.movie-info h2 {
+  margin: 0;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  color: #f5f7fa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: transparent;
+}
+
+.movie-info-icon {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  align-self: start;
+  background: none;
+  border: none;
+  padding: 0;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.movie-info-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.movie-info-icon:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.movie-info h3 {
+  margin: 0;
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: #626c7b;
+  text-transform: capitalize;
+  background-color: transparent;
+}

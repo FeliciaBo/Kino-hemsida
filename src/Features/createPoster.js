@@ -1,3 +1,5 @@
+import { getGenreNames } from "../API/genreID";
+
 const IMG_BASE = "https://image.tmdb.org/t/p/w780";
 
 export const createPoster = (movie, container) => {
@@ -15,7 +17,10 @@ export const createPoster = (movie, container) => {
     <img src="${imgUrl}" alt="${movie.title}">
     <div class="movie-info">
       <h2>${movie.title}</h2>
-      <h3>${movie.genre_ids}</h3>
+      <button class="movie-info-icon" aria-label="More info">
+        <img src="/img/info.png" alt="information about the movie">
+        </button>
+      <h3>${getGenreNames(movie.genre_ids)}</h3>
     </div>
   `;
 

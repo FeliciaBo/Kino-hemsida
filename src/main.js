@@ -8,27 +8,33 @@ import {
 } from "./API/moviesApi";
 
 import { createPoster } from "./Features/createPoster";
-import { initCarousel } from "./Features/carousel";
-
+import { bindBackdrops, initCarousel } from "./Features/carousel";
 await fetchToplist();
 
-const topThree = [
-  store.topList[0],
-  store.topList[2],
-  store.topList[5],
-];
-
-const root = document.querySelector("#toplist-carousel");
-initCarousel(root, topThree);
 
 
 // Ladda header
 async function loadHeader() {
-  const response = await fetch("/partials/header.html");
+  const response = await fetch("/Partials/header.html");
   const html = await response.text();
   document.querySelector(".header-container").innerHTML = html;
 }
 loadHeader();
+
+async function loadToplistCarousel() {
+  const response = await fetch("/Partials/carousel.html");
+  const html = await response.text();
+  document.querySelector("#toplist-carousel").innerHTML = html;
+}
+
+await loadToplistCarousel();
+const topThree = [
+  store.topList[0],
+  store.topList[2],
+  store.topList[3],
+];
+bindBackdrops(topThree);
+initCarousel();
 
 async function startMovies() {
   try {

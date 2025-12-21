@@ -1,48 +1,87 @@
-import { createPoster } from "./createPoster";
+const IMG_BASE = "https://image.tmdb.org/t/p/w780";
 
-export const initCarousel = (root, movies) => {
-  if (!root || !Array.isArray(movies) || movies.length === 0) return;
+let slideIndex = 1;
 
-  root.innerHTML = `
-    <button class="carousel__btn carousel__btn--prev">‹</button>
-    <div class="carousel__viewport">
-      <div class="carousel__track"></div>
-    </div>
-    <button class="carousel__btn carousel__btn--next">›</button>
-  `;
+// Autoplay
+let autoplayTimer = null;
+const AUTOPLAY_DELAY = 3000;
 
-  const track = root.querySelector(".carousel__track");
-  const prevBtn = root.querySelector(".carousel__btn--prev");
-  const nextBtn = root.querySelector(".carousel__btn--next");
+export function initCarousel() {
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
 
-  movies.forEach((movie) => {
-    const slide = document.createElement("div");
-    slide.classList.add("carousel__slide");
-    track.appendChild(slide);
-    createPoster(movie, slide);
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      plusSlides(-1);
+      restartAutoplay();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      plusSlides(1);
+      restartAutoplay();
+    });
+  }
+
+  showSlides(slideIndex);
+  startAutoplay();
+}
+
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+function showSlides(n) {
+  const slides = document.getElementsByClassName("mySlides");
+  if (!slides.length) return;
+
+  if (n > slides.length) slideIndex = 1;
+  if (n < 1) slideIndex = slides.length;
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+}
+
+function startAutoplay() {
+  stopAutoplay();
+  autoplayTimer = setInterval(() => {
+    plusSlides(1);
+  }, AUTOPLAY_DELAY);
+}
+
+function stopAutoplay() {
+  if (autoplayTimer) {
+    clearInterval(autoplayTimer);
+    autoplayTimer = null;
+  }
+}
+
+function restartAutoplay() {
+  startAutoplay();
+}
+
+export function bindBackdrops(movies) {
+  const slides = document.querySelectorAll(".mySlides");
+
+  movies.forEach((movie, i) => {
+    const slide = slides[i];
+    if (!slide || !movie?.backdrop_path) return;
+
+    const img = slide.querySelector(".slide-img");
+    const titleEl = slide.querySelector(".slide-title");
+
+    if (img) {
+      img.src = IMG_BASE + movie.backdrop_path;
+      img.alt = movie.title || "Movie";
+    }
+
+    if (titleEl) {
+      titleEl.textContent = movie.title || "";
+    }
   });
+}
 
-  const slides = track.children;
-  let index = 0;
-
-  const update = () => {
-    const width = slides[0].offsetWidth;
-    track.style.transform = `translateX(${-index * width}px)`;
-  };
-
-  const next = () => {
-    index = (index + 1) % slides.length;
-    update();
-  };
-
-  const prev = () => {
-    index = (index - 1 + slides.length) % slides.length;
-    update();
-  };
-
-  nextBtn.addEventListener("click", next);
-  prevBtn.addEventListener("click", prev);
-  window.addEventListener("resize", update);
-
-  update();
-};

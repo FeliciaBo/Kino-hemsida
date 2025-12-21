@@ -7,13 +7,34 @@ import {
   fetchClassics,
 } from "./API/moviesApi";
 
+import { createPoster } from "./Features/createPoster";
+import { bindBackdrops, initCarousel } from "./Features/carousel";
+await fetchToplist();
+
+
+
 // Ladda header
 async function loadHeader() {
-  const response = await fetch("/partials/header.html");
+  const response = await fetch("/Partials/header.html");
   const html = await response.text();
   document.querySelector(".header-container").innerHTML = html;
 }
 loadHeader();
+
+async function loadToplistCarousel() {
+  const response = await fetch("/Partials/carousel.html");
+  const html = await response.text();
+  document.querySelector("#toplist-carousel").innerHTML = html;
+}
+
+await loadToplistCarousel();
+const topThree = [
+  store.topList[0],
+  store.topList[2],
+  store.topList[3],
+];
+bindBackdrops(topThree);
+initCarousel();
 
 async function startMovies() {
   try {
@@ -50,4 +71,10 @@ async function startMovies() {
   // DisplayMovies();
 }
 
-startMovies();
+await startMovies();
+
+const topListContainer = document.querySelector(".toplist-container");
+
+store.nowPlaying.forEach((movie) => {
+  createPoster(movie, topListContainer);
+});

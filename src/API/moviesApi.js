@@ -1,4 +1,7 @@
-import { TMDB_API_KEY } from "./apiKey";
+console.log("movieApi.js LADDAD");
+
+
+import { TMDB_API_KEY } from "./apiKey.js";
 
 export const store = {
   nowPlaying: [],
@@ -65,3 +68,30 @@ export const fetchClassics = async () => {
   const data = await response.json();
   addUniqueIdsToStore(data.results, "classics", 5);
 };
+
+export const generateTop10 = () => {
+  const moviesCopy = [];
+
+  for (let i = 0; i < store.allMovies.length; i++) {
+    moviesCopy.push(store.allMovies[i]);
+  }
+
+  moviesCopy.sort((a, b) => {
+    return b.vote_average - a.vote_average;
+  });
+
+  store.topList = moviesCopy.slice(0, 10);
+};
+
+const start = async () => {
+  await fetchNowPlaying();
+  await fetchToplist();
+  await fetchKidsMovies();
+  await fetchClassics();
+
+  generateTop10();
+
+  console.log(store.topList);
+};
+
+start();

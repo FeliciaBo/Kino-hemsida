@@ -21,6 +21,8 @@ body,* {
   border: 1px solid rgba(0, 0, 0, 0.6);
   border-radius: 0;
   font-weight: 600;
+
+  margin-right: 1rem;
 }
 
 .price-title {
@@ -44,4 +46,15 @@ body,* {
   font-size: 0.8rem;
   color: #9aa0a6;
   background: none;
+}
+
+.events-and-price {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  
+}
+
+.events {
+  margin-right: auto;
 }

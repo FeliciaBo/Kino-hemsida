@@ -1,4 +1,73 @@
+@use './mixins_variables.scss' as *;
+@use './button.scss';
 .tags {
     display: flex;
     flex-direction: row;
+}
+
+.search__bar {
+    display: flex;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.search__input__wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.search__bar__movie {
+    width: 100%;
+    background-color: #0E131B;
+    border: 1px solid #626C7B;
+    border-radius: 0.5rem;
+    padding: 0.75rem 2.75rem 0.75rem 1rem;
+    min-height: 48px;
+    max-height: 64px;
+    color: #f5f7fa;
+    font-size: 1rem;
+}
+
+.search__bar__movie::placeholder {
+    color: #9AA4B2;
+}
+
+.search__bar__movie:focus {
+    outline: none;
+    border-color: #DD6031;
+}
+
+.search__icon-button {
+    position: absolute;
+    right: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #9AA4B2;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.search__icon-button:hover {
+    color: #DD6031;
+}
+
+@media (min-width: 601px) {
+
+    .search__bar {
+        justify-content: center;
+    }
+
+    .search__input__wrapper {
+        max-width: 520px;
+        height: 64px;
+    }
+
+    .search__bar__movie {
+        font-size: 1.05rem;
+        height: 64px;
+    }
 }

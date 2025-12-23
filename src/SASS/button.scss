@@ -40,8 +40,9 @@
     color: $orange-color;
     font-family: $font-subheader;
     height: 2rem;
-    width: 4rem;
-    border: 1px solid $orange-color;
+    width: auto;
+    font-size: 16px;
+    border: 1.5px solid $orange-color;
     border-radius: 30px;
     padding: 6px 14px;
     margin: 3px;

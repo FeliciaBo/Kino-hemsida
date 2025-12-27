@@ -1,0 +1,62 @@
+@use './mixins_variables.scss' as *;
+
+.footer__div {
+    margin: 2rem;
+    background-color: $card-color;
+    border-radius: 5px;
+    color: $primary-text-color;
+}
+
+.footer__title {
+text-align: center;
+font-family: $font-header;
+background-color: transparent;
+padding: 2rem 2rem 0rem 2rem;
+font-size: 1.5rem;
+}
+
+.footer__all-lists {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem; 
+    padding: 2rem 2rem 3rem 2rem;
+    background-color: transparent;
+    align-items: center;
+    justify-items: center;
+}
+
+.footer__listA {
+list-style: none;
+}
+
+.footer__listB {
+list-style: none;
+}
+
+.footer__listC {
+list-style: none;
+}
+
+.footer__listA li {
+    background-color: $card-color;
+    font-size: 1rem;
+    padding: 0.5rem;
+    font-family: $font-subheader;
+    font-weight: 500;
+}
+
+.footer__listB li {
+    background-color: $card-color;
+    font-size: 1rem;
+    padding: 0.5rem;
+    font-family: $font-subheader;
+
+}
+
+.footer__listC li {
+    background-color: $card-color;
+    font-size: 1rem;
+    padding: 0.5rem;
+    font-family: $font-subheader;
+    
+}

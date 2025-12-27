@@ -15,6 +15,13 @@ async function loadHeader() {
 }
 loadHeader();
 
+async function loadFooter() {
+  const response = await fetch("/partials/footer.html");
+  const html = await response.text();
+  document.querySelector(".footer__container").innerHTML = html;
+}
+loadFooter();
+
 async function startMovies() {
   try {
     await fetchNowPlaying();

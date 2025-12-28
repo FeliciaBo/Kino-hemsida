@@ -4,25 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="src/SASS/filmer.css">
+
     <title>Filmer</title>
 </head>
 <body>
-<section></section>
+
+<section>
     <div class="tags">
    <div class="tagsbtn">Aktuellt</div>
    <div class="tagsbtn">Barnfilmer</div>
    <div class="tagsbtn">Klassiker</div>
     </div>
+  </section>
 
+  <section class="filters-section">
     <div class="filters">
-        <div class="filter"></div>
-        <div class="filter"></div>
+        <div class="filters__filter date">Välj dag</div>
+        <div class="filters__filter time">Välj tid</div>
         <search> </search>
     </div>
     
      <div class="search__bar">
     <div class="search__input__wrapper">
-      <input class="search__bar__movie" type="text" placeholder="Search movies..." id="searchInput" />
+      <input class="search__bar__movie" type="text" placeholder="Sök efter film..." id="searchInput" />
       <button type="button" class="search__icon-button" id="searchBtn">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
           <path
@@ -31,13 +36,14 @@
       </button>
     </div>
   </div>
-    
-<section>
+  </section>  
+<section class="movie-container">
 
 <!-- Insert them movies here-->
 
-
+<div class="button_films">
 <button class="secondarybtn">Mer filmer</button>
+</div>
 </section>
 
 </body>

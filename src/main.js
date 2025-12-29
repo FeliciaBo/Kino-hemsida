@@ -6,6 +6,13 @@ import {
   fetchKidsMovies,
   fetchClassics,
 } from "./API/moviesApi";
+import { createPoster } from "./Features/createPoster";
+import { initGenres, getGenreNames } from "./API/genreID";
+
+await initGenres();
+
+console.log(getGenreNames([28, 878, 12]));
+
 
 // Ladda header
 async function loadHeader() {
@@ -50,4 +57,11 @@ async function startMovies() {
   // DisplayMovies();
 }
 
-startMovies();
+await startMovies();
+
+
+const topListContainer = document.querySelector(".movie__page__movies");
+
+store.allMovies.forEach((movie) => {
+  createPoster(movie, topListContainer);
+});

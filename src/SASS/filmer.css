@@ -63,6 +63,11 @@
   flex-direction: row;
   margin-left: 1rem;
 }
+@media screen and (min-width: 1018px) {
+  .tags {
+    margin-left: 2rem;
+  }
+}
 
 .filters-section {
   margin-top: 2rem;
@@ -74,6 +79,7 @@
   .filters-section {
     flex-direction: row;
     align-items: center;
+    margin-left: 1rem;
   }
 }
 
@@ -91,17 +97,22 @@
   font-size: 1.25rem;
   font-family: "semi-bold Open sans", sans-serif;
   text-align: left;
-  color: #626C7B;
+  color: #F5F7FA;
   cursor: pointer;
 }
 .filters__filter:hover {
   border-color: #F5F7FA;
-  color: #F5F7FA;
 }
 @media screen and (min-width: 1018px) {
   .filters__filter {
     width: 230px;
   }
+}
+.filters__filter i {
+  float: right;
+  color: #F5F7FA;
+  font-size: 1.25rem;
+  margin-top: 4px;
 }
 
 .search__bar {

@@ -1,13 +1,15 @@
 @use './mixins_variables.scss' as *;
 @use './button.scss';
 
-
-
 .tags {
     margin-top: 2rem;
     display: flex;
     flex-direction: row;
     margin-left: 1rem;
+
+    @include desktop {
+    margin-left: 2rem;
+  }
 }
 
 .filters-section {
@@ -19,6 +21,7 @@
   @include desktop {
     flex-direction: row;
     align-items: center;
+    margin-left: 1rem;
   }
 }
 
@@ -37,20 +40,29 @@
     font-size: 1.25rem;
     font-family: $font-subheader;
     text-align: left;
-    color: $secondary-text-color;
+    color: $primary-text-color;
     cursor: pointer;
 
     &:hover {
       border-color: $primary-text-color;
-      color: $primary-text-color;
+      
     }
     
     @include desktop {
       width: 230px;
   }
 
+    i {
+      float: right;
+     color: $primary-text-color;
+     font-size: 1.25rem;
+     margin-top: 4px;
+
+
+    }
+  }
 }
-}
+
 .search__bar {
   width: 100%;
   padding: 0 1rem;

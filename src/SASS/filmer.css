@@ -89,9 +89,14 @@
   border-radius: 0.5rem;
   padding: 1rem 1.625rem;
   font-size: 1.25rem;
+  font-family: "semi-bold Open sans", sans-serif;
   text-align: left;
-  color: #F5F7FA;
+  color: #626C7B;
   cursor: pointer;
+}
+.filters__filter:hover {
+  border-color: #F5F7FA;
+  color: #F5F7FA;
 }
 @media screen and (min-width: 1018px) {
   .filters__filter {
@@ -102,6 +107,7 @@
 .search__bar {
   width: 100%;
   padding: 0 1rem;
+  font-family: "semi-bold Open sans", sans-serif;
 }
 @media screen and (min-width: 1018px) {
   .search__bar {

@@ -35,9 +35,15 @@
     border-radius: 0.5rem;
     padding: 1rem 1.625rem;
     font-size: 1.25rem;
+    font-family: $font-subheader;
     text-align: left;
-    color: $primary-text-color;
+    color: $secondary-text-color;
     cursor: pointer;
+
+    &:hover {
+      border-color: $primary-text-color;
+      color: $primary-text-color;
+    }
     
     @include desktop {
       width: 230px;
@@ -48,6 +54,7 @@
 .search__bar {
   width: 100%;
   padding: 0 1rem;
+  font-family: $font-subheader;
 
   @include desktop {
     margin-left: auto;

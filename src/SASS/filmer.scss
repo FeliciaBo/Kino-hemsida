@@ -14,14 +14,13 @@
     margin-top: 2rem;
     display: flex;
     align-items: center;
-    font-size: 1.25rem;
-
 }
 
 .filters {
    color: $secondary-text-color;
    font-family: $font-subheader;
    display: flex;
+   font-size: 1.25em;
 
     &__filter {
         background-color: $card-color;
@@ -31,6 +30,7 @@
         text-align: left;
         border-radius: 0.5rem;
         border: $secondary-text-color 1px solid;
+        font-size: 1.25rem;
 
         .arrow__icon-button {
     position: absolute;
@@ -61,6 +61,7 @@
     display: flex;
     padding: 0 1rem;
     margin-left: auto;
+    font-size: 1.25rem;
 }
 
 .search__input__wrapper {
@@ -74,12 +75,14 @@
     padding: 1rem 1.625rem;
     color: #f5f7fa;
     min-width: fit-content;
+    flex: auto;
     max-width: 300px;
 }
    
 
 .search__bar__movie::placeholder {
     color: $secondary-text-color;
+    font-size: 1.25rem;
 }
 
 .search__bar__movie:focus {
@@ -105,10 +108,21 @@
     color: #DD6031;
 }
 
+.button_films {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
 @media (min-width: 601px) {
 
+    .filters-section {
+        margin-right: 1rem;
+    }
+    
     .search__bar {
         justify-content: center;
+        flex-direction: column;
     }
 
       .search__input__wrapper {
@@ -117,10 +131,30 @@
     }
 }
 
-.button_films {
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0;
-}
+@media (max-width: 600px) {
+    .filters-section {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 1rem;
+    }
 
+    .filters {
+        margin-bottom: 1rem;
+    }
+
+    &.time {
+        margin-right: 1rem;
+    }
+
+    .search__bar {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 0;
+    }
+
+    .search__input__wrapper {
+        max-width: none;
+        width: 100%;
+    }
+}
 

@@ -1,0 +1,65 @@
+@use './mixins_variables.scss' as *;
+
+.primarybtn {
+    background-color: $blue-color;
+    color: $background-color;
+    font-family: $font-subheader;
+    font-weight: bold;
+    font-size: 20px;
+    height: 4rem;
+    width: 13rem;
+    border: 1px solid $background-color;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $blue-hover-color;
+    }
+}
+
+.secondarybtn {
+    background-color: $background-color;
+    color: $secondary-text-color;
+    font-family: $font-subheader;
+    font-weight: bold;
+    font-size: 20px;
+    height: 4rem;
+    width: 13rem;
+    border: 1px solid $secondary-text-color;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+        color: $blue-hover-color;
+        border-color: $blue-hover-color;
+    }
+}
+
+.tagsbtn {
+    background-color: $background-color;
+    color: $orange-color;
+    font-family: $font-subheader;
+    height: 2rem;
+    width: 4rem;
+    border: 1px solid $orange-color;
+    border-radius: 30px;
+    padding: 6px 14px;
+    margin: 3px;
+    cursor: pointer;
+    transition: 0.2s;
+
+
+     &:hover {
+        color: $background-color;
+        border-color: $orange-hover-color;
+        background-color: $orange-hover-color;
+    }
+
+    &:active {
+    background-color: $orange-color;
+    color: $background-color;
+    border-color: $orange-color;
+  }
+
+
+}

@@ -1,11 +1,10 @@
 @use './header';
 @use './footer';
 @use './start.scss';
-@use 'mixins_variables';
-@use '_pricelist.scss';
+@use './mixins_variables.scss';
+@use './event_pricelist';
 @use './carousel.scss';
 @use './movie-poster.scss';
-@use './mixins_variables.scss';
 @use './button.scss';
 
 //basic reset + setting background color

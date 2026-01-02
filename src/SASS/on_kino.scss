@@ -1,0 +1,50 @@
+@use './mixins_variables.scss' as *;
+
+%list-item-base {
+    background-color: $card-color;
+    font-size: 1rem;
+    padding: 0.2rem;
+    font-family: $font-subheader;
+    font-weight: 600;
+}
+
+.kino_box {
+    background-color: $card-color;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    width: calc(100% - 4rem); 
+    max-width: 1200px; 
+    margin: 2rem auto; 
+    text-align: center;
+    border-radius: 5px;
+
+    @media (min-width: 768px) {
+        width: calc(100% - 4rem); 
+    }
+}
+
+.kino_box h2 {
+    background-color: $card-color;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+.ul_container {
+    background-color: $card-color;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.ul_container ul {
+    background-color: $card-color;
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+
+    li {
+        @extend %list-item-base;
+        margin-bottom: 10px;
+    }
+}

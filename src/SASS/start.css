@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #080B10;
+  color: #f5f7fa;
+  margin: 0;
+  width: 100%;
+}
+
+.button_frontpage {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.disclaimer {
+  display: flex;
+  align-items: center;
+  background-color: #179A90;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 90vw;
+  margin: 1rem auto;
+  color: #080B10;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.info-icon {
+  font-size: 32px;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  color: #080B10;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (min-width: 601px) {
+  body {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .more__movies {
+    width: 240px;
+  }
+  .book__now {
+    width: 240px;
+  }
+  .disclaimer {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    max-width: 1248px;
+  }
+}/*# sourceMappingURL=start.css.map */

@@ -1,17 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="sv">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Filmsida</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="src/SASS/filmer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <title>Filmer</title>
 </head>
-
 <body>
-  <div class="header-container"></div>
+    <div class="header-container"></div>
 
-  <h1>KINO</h1>
-  <div class="search__bar">
+  
+<section>
+  <div class="disclaimer">
+<svg class="info-icon" viewBox="0 0 24 24" aria-hidden="true">
+  <circle cx="12" cy="12" r="11" fill="none" stroke="#000" stroke-width="1.2"/>
+  <rect x="11.4" y="9" width="1.2" height="7" rx="0.6" fill="#000"/>
+  <circle cx="12" cy="6.5" r="1" fill="#000"/>
+</svg> Biljetter betalas alltid på plats, bokning sker på webben, via telefon eller på plats
+      </div>
+    </section>
+
+<section>
+    <div class="tags">
+   <div class="tagsbtn">Aktuellt</div>
+   <div class="tagsbtn">Barnfilmer</div>
+   <div class="tagsbtn">Klassiker</div>
+    </div>
+  </section>
+
+  <section class="filters-section">
+    <div class="filters">
+        <div class="filters__filter date">Välj dag <i class='fas'>&#xf107;</i></div>
+        <div class="filters__filter time">Välj tid <i class='fas'>&#xf107;</i></div>
+    </div>
+    
+    <div class="search__bar">
     <div class="search__input__wrapper">
       <input class="search__bar__movie" type="text" placeholder="Search movies..." id="searchInputMovies" />
       <button type="button" class="search__icon-button" id="searchBtnMovies">
@@ -22,12 +48,20 @@
       </button>
     </div>
   </div>
+  </section>  
 
-  <div class="movies-wrapper">
+  <section>
+ <div class="movies-wrapper">
     <div class="movie__page__movies"></div>
   </div>
 
-  <script type="module" src="/src/main.js"></script>
+<div class="button_films">
+<button class="secondarybtn">Mer filmer</button>
+</div>
+</section>
+
+ <script type="module" src="/src/main.js"></script>
+</body>
 </body>
 
 </html>

@@ -24,7 +24,7 @@ $font-body: 'regular Open sans', sans-serif;
 
 // Breakpoint Mixins
 @mixin mobile {
-    @media screen and (min-width: 480px) { //kommer antagligen justeras
+    @media screen and (min-width: 570px) { //kommer antagligen justeras
         @content;
     }
 }

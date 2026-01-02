@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+header {
+  background-color: aqua;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #080B10;
+  color: #f5f7fa;
+  margin: 0;
+  width: 100%;
+}
+
+.button_frontpage {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.disclaimer {
+  display: flex;
+  align-items: center;
+  background-color: #179A90;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 90vw;
+  margin: 1rem auto;
+  color: #080B10;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.info-icon {
+  font-size: 32px;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  color: #080B10;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (min-width: 601px) {
+  body {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .more__movies {
+    width: 240px;
+  }
+  .book__now {
+    width: 240px;
+  }
+  .disclaimer {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    max-width: 1248px;
+  }
+}
+.primarybtn {
+  background-color: #179A90;
+  color: #080B10;
+  font-family: "semi-bold Open sans", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  height: 4rem;
+  width: 13rem;
+  border: 1px solid #080B10;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.primarybtn:hover {
+  background-color: #39C2B7;
+}
+
+.secondarybtn {
+  background-color: #080B10;
+  color: #626C7B;
+  font-family: "semi-bold Open sans", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  height: 4rem;
+  width: 13rem;
+  border: 1px solid #626C7B;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.secondarybtn:hover {
+  color: #39C2B7;
+  border-color: #39C2B7;
+}
+
+.tagsbtn {
+  background-color: #080B10;
+  color: #DD6031;
+  font-family: "semi-bold Open sans", sans-serif;
+  height: 2rem;
+  width: auto;
+  font-size: 16px;
+  border: 1.5px solid #DD6031;
+  border-radius: 30px;
+  padding: 6px 14px;
+  margin: 3px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.tagsbtn:hover {
+  color: #080B10;
+  border-color: #FF7F4E;
+  background-color: #FF7F4E;
+}
+.tagsbtn:active {
+  background-color: #DD6031;
+  color: #080B10;
+  border-color: #DD6031;
+}
+
+.tags {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  margin-left: 1rem;
+}
+
+.filters-section {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+.filters {
+  color: #626C7B;
+  font-family: "semi-bold Open sans", sans-serif;
+  display: flex;
+}
+.filters__filter {
+  background-color: #0E131B;
+  padding: 1rem 1.625rem;
+  cursor: pointer;
+  width: 230px;
+  text-align: left;
+  border-radius: 0.5rem;
+  border: #626C7B 1px solid;
+}
+.filters__filter .arrow__icon-button {
+  position: absolute;
+  right: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #626C7B;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.filters__filter.date {
+  margin-left: 1rem;
+}
+.filters__filter.time {
+  margin-left: 1rem;
+}
+
+.search__bar {
+  display: flex;
+  padding: 0 1rem;
+  margin-left: auto;
+}
+
+.search__input__wrapper {
+  position: relative;
+}
+
+.search__bar__movie {
+  background-color: #0E131B;
+  border: 1px solid #626C7B;
+  border-radius: 0.5rem;
+  padding: 1rem 1.625rem;
+  color: #f5f7fa;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  max-width: 300px;
+}
+
+.search__bar__movie::-moz-placeholder {
+  color: #626C7B;
+}
+
+.search__bar__movie::placeholder {
+  color: #626C7B;
+}
+
+.search__bar__movie:focus {
+  outline: none;
+  border-color: #DD6031;
+}
+
+.search__icon-button {
+  position: absolute;
+  right: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #626C7B;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.search__icon-button:hover {
+  color: #DD6031;
+}
+
+@media (min-width: 601px) {
+  .search__bar {
+    justify-content: center;
+  }
+  .search__input__wrapper {
+    max-width: 520px;
+    width: 100%;
+  }
+}
+.button_films {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+body, * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #080B10;
+  font-size: 16px;
+  color: white;
+  font-family: "regular Open sans", sans-serif;
+}/*# sourceMappingURL=main.css.map */

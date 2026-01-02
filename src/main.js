@@ -6,14 +6,57 @@ import {
   fetchKidsMovies,
   fetchClassics,
 } from "./API/moviesApi";
+import { createPoster } from "./Features/createPoster";
+import { initGenres, getGenreNames } from "./API/genreID";
+
+await initGenres();
+
+console.log(getGenreNames([28, 878, 12]));
+
+
+
+import { bindBackdrops, initCarousel } from "./Features/carousel";
+await fetchToplist();
+
+
 
 // Ladda header
 async function loadHeader() {
-  const response = await fetch("/partials/header.html");
+  const response = await fetch("/Partials/header.html");
   const html = await response.text();
   document.querySelector(".header-container").innerHTML = html;
 }
 loadHeader();
+
+async function loadFooter() {
+  const response = await fetch("/partials/footer.html");
+  const html = await response.text();
+  document.querySelector(".footer__container").innerHTML = html;
+}
+loadFooter();
+async function loadToplistCarousel() {
+  const container = document.querySelector("#toplist-carousel");
+
+  if (!container) return; 
+
+  try {
+    const response = await fetch("/Partials/carousel.html");
+    const html = await response.text();
+    container.innerHTML = html;
+
+    const topThree = [
+      store.topList[0],
+      store.topList[2],
+      store.topList[3],
+    ];
+    bindBackdrops(topThree);
+    initCarousel();
+  } catch (err) {
+    console.error("Kunde inte ladda karusellen:", err);
+  }
+}
+
+loadToplistCarousel();
 
 async function startMovies() {
   try {
@@ -50,4 +93,11 @@ async function startMovies() {
   // DisplayMovies();
 }
 
-startMovies();
+await startMovies();
+
+
+const topListContainer = document.querySelector(".movie__page__movies");
+console.log(store.allMovies);
+store.allMovies.forEach((movie) => {
+  createPoster(movie, topListContainer);
+});

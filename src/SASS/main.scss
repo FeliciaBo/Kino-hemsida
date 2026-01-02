@@ -1,13 +1,18 @@
 @use './header';
+@use './footer';
 @use './start.scss';
 @use './mixins_variables.scss';
+@use './event_pricelist';
+@use './carousel.scss';
+@use './movie-poster.scss';
 @use './button.scss';
 @use './filmer.scss';
 
+@use './on_kino.scss';
 
 //basic reset + setting background color
 body,* {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
     background-color: mixins_variables.$background-color;

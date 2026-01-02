@@ -1,0 +1,55 @@
+@use './mixins_variables.scss' as *;
+
+%list-item-base {
+    background-color: $card-color;
+    font-size: 1rem;
+    padding: 0.2rem;
+    font-family: $font-subheader;
+    font-weight: 200;
+}
+
+.footer__div {
+    margin: 1rem;
+    background-color: $card-color;
+    border-radius: 5px;
+    color: $primary-text-color;
+
+    @media (min-width: 768px) {
+        margin: 2rem;
+    }
+}
+
+.footer__all-lists {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1.5rem;
+    padding: 2rem 1rem; 
+    background-color: transparent;
+
+    @media (min-width: 768px) {
+        grid-template-columns: 2fr repeat(3, 1fr);
+        gap: 0rem;
+        padding: 2rem 2rem 5rem 2rem;
+    }
+}
+
+.footer__list, .footer__listA {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 2rem 2rem 3rem;
+    background-color: transparent;
+}
+
+.footer__list li, .footer__listA li {
+    @extend %list-item-base;
+    list-style-type: none;
+}
+
+.li__header {
+    font-weight: bolder !important;
+    margin-bottom: 0.4rem;
+}
+
+.li__space {
+    margin-bottom: 1rem;
+}

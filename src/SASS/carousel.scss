@@ -1,0 +1,125 @@
+@use "./mixins_variables.scss" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: 3rem;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 48px;
+  height: 48px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: transparent;
+
+  user-select: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+/* Vänsterpil */
+.prev {
+  left: 12px;
+  background-image: url("/img/arrow-left-circle.png");
+}
+
+/* Högerpil */
+.next {
+  right: 12px;
+  background-image: url("/img/arrow-right-circle.png");
+}
+.prev:hover,
+.next:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slideshow-container {
+  position: relative;
+}
+
+.prev,
+.next {
+  z-index: 1000;
+}
+
+.mySlides img {
+  pointer-events: none;
+  border-radius: 10px;
+}
+
+.slideshow-container {
+  position: relative;
+}
+
+.mySlides {
+  position: relative;
+}
+
+.slide-title {
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  margin: 0;
+  font-family: $font-header;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: $primary-text-color;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
+  pointer-events: none;
+  font-size: 1.25rem;
+  line-height: 1.15;
+  background-color: transparent;
+
+  .slide-title::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 3px;
+    margin-top: 0.6rem;
+    border-radius: 999px;
+  }
+
+  @include mobile {
+    font-size: 1.6rem;
+  }
+
+  @include desktop {
+    font-size: 2rem;
+  }
+}

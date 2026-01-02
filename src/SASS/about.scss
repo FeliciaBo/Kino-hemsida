@@ -1,8 +1,70 @@
-.about-page {
-  background: red;
+@use './mixins_variables' as *;
+
+* {
+  box-sizing: border-box;
 }
 
-.about-us{
-  background-color: aqua;
-  color:red;
+html,
+body {
+  background-color: $background-color;
+  color: $primary-text-color;
+  margin: 0;
+  width: 100%;
+  font-family: $font-body;
+  font-weight: 400;
+
+}
+.logo-type{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+/* ===== MOBILE FIRST ===== */
+.about_us__field,
+.salon_field,
+.history_field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $card-color;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+}
+
+.about-us,
+.salon,
+.history {
+  max-width: 90%;
+  line-height: 1.6;
+}
+
+/* ===== TABLET / DESKTOP ===== */
+@include desktop {
+  body {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+.logo-type{
+  width: 307px;
+  height: 307px;
+  margin-bottom: -7rem;
+  margin-top: 1rem;
+}
+  .about_us__field, 
+  .salon_field,
+  .history_field {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+
+  .about-us, 
+  .salon,
+  .history {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 892px;
+    font-size: 16px;
+  }
 }

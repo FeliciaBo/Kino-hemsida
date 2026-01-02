@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,10 +14,15 @@
   
 <section>
   <div class="disclaimer">
-    <i class="fa fa-info-circle info-icon"></i>
-    Biljetter betalas alltid på plats, bokning sker på webben, via telefon eller på plats
-  </div>
-</section>
+<svg class="info-icon" viewBox="0 0 24 24" aria-hidden="true">
+  <circle cx="12" cy="12" r="11" fill="none" stroke="#000" stroke-width="1.2"/>
+  <rect x="11.4" y="9" width="1.2" height="7" rx="0.6" fill="#000"/>
+  <circle cx="12" cy="6.5" r="1" fill="#000"/>
+</svg>
+    
+        Biljetter betalas alltid på plats, bokning sker på webben, via telefon eller på plats
+      </div>
+    </section>
 
 <section>
     <div class="tags">
@@ -45,14 +50,18 @@
     </div>
   </div>
   </section>  
-<section class="movie-container">
 
-<!-- Insert them movies here-->
+  <section>
+ <div class="movies-wrapper">
+    <div class="movie__page__movies"></div>
+  </div>
 
 <div class="button_films">
 <button class="secondarybtn">Mer filmer</button>
 </div>
 </section>
 
+ <script type="module" src="/src/main.js"></script>
+</body>
 </body>
 </html>

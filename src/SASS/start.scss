@@ -93,6 +93,30 @@ body {
   fill: none;
 }
 
+
+@media (min-width: 601px) {
+    body {
+        margin: 0 auto;
+    }
+
+    .more__movies {
+        width: 240px;
+    }
+
+    .book__now {
+        width: 240px;
+    }
+
+    .disclaimer {
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+        height: 80px;
+        max-width: 1248px;
+    }
+
+ }
+    
 @media (min-width: 768px) {
   .info-icon {
     margin: 0;

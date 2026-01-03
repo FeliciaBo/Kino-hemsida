@@ -8,11 +8,13 @@ import {
 } from "./API/moviesApi";
 import { createPoster } from "./Features/createPoster";
 import { initGenres, getGenreNames } from "./API/genreID";
+import { handleLiveSearch } from "./Features/handleLiveSearch";
 import { bindBackdrops, initCarousel } from "./Features/carousel";
 
 // 1. Hämta all data först (Genrer och Filmer)
 await initGenres();
 console.log(getGenreNames([28, 878, 12]));
+await startMovies();
 
 async function startMovies() {
   try {
@@ -46,8 +48,6 @@ async function startMovies() {
   console.log("All movies in Store:", store.allMovies);
 }
 
-await startMovies();
-
 // 2. Definiera laddningsfunktioner för HTML
 async function loadHeader() {
   const response = await fetch("/Partials/header.html");
@@ -64,18 +64,14 @@ async function loadFooter() {
 async function loadToplistCarousel() {
   const container = document.querySelector("#toplist-carousel");
 
-  if (!container) return; 
+  if (!container) return;
 
   try {
     const response = await fetch("/Partials/carousel.html");
     const html = await response.text();
     container.innerHTML = html;
 
-    const topThree = [
-      store.topList[0],
-      store.topList[1],
-      store.topList[2],
-    ];
+    const topThree = [store.topList[0], store.topList[1], store.topList[2]];
     bindBackdrops(topThree);
     initCarousel();
   } catch (err) {
@@ -88,68 +84,118 @@ await loadHeader();
 await loadFooter();
 await loadToplistCarousel();
 
+const moviesWrapper = document.querySelector(".movie__page__movies");
+const searchInput = document.getElementById("searchInputMovies");
+const searchBtn = document.getElementById("searchBtnMovies");
+
+if (moviesWrapper && searchInput && searchBtn) {
+  searchInput.addEventListener("input", () =>
+    handleLiveSearch(
+      searchInput,
+      renderMovies,
+      renderFilteredMovieList,
+      renderNoResultsMessage
+    )
+  );
+
+  searchBtn.addEventListener("click", () =>
+    handleLiveSearch(
+      searchInput,
+      renderMovies,
+      renderFilteredMovieList,
+      renderNoResultsMessage
+    )
+  );
+}
+
 // 4. Slutligen, rendera posters (nu när containern garanterat finns)
-const topListContainer = document.querySelector(".movie__page__movies");
-console.log(store.allMovies);
-store.allMovies.forEach((movie) => {
-  createPoster(movie, topListContainer);
-});
+renderMovies();
 
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.querySelector('.nav-menu');
-const mobileIcons = document.querySelectorAll('.mobile-nav_item');
+function renderMovies() {
+  if (!moviesWrapper) return;
+  clearMovies();
+  store.allMovies.forEach((movie) => createPoster(movie, moviesWrapper));
+}
 
+function clearMovies() {
+  if (!moviesWrapper) return;
+  moviesWrapper.innerHTML = "";
+}
+
+function renderNoResultsMessage(searchText) {
+  if (!moviesWrapper) return;
+  clearMovies();
+
+  const message = document.createElement("div");
+  message.className = "no-results";
+
+  message.innerHTML = `
+    <h3>Inga träffar</h3>
+    <p>Vi hittade inga filmer som matchar <strong>"${searchText}"</strong>.</p>
+  `;
+
+  moviesWrapper.appendChild(message);
+}
+
+function renderFilteredMovieList(movies) {
+  if (!moviesWrapper) return;
+  clearMovies();
+  movies.forEach((movie) => createPoster(movie, moviesWrapper));
+}
+
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.querySelector(".nav-menu");
+const mobileIcons = document.querySelectorAll(".mobile-nav_item");
 
 // Klick på hamburgare
-menuToggle.addEventListener('click', (e) => {
+menuToggle.addEventListener("click", (e) => {
   e.stopPropagation();
-  navMenu.classList.toggle('active');
-  menuToggle.classList.toggle('active');
+  navMenu.classList.toggle("active");
+  menuToggle.classList.toggle("active");
 
-  if (!navMenu.classList.contains('active')) {
-    mobileIcons.forEach(icon => icon.classList.remove('active'));
+  if (!navMenu.classList.contains("active")) {
+    mobileIcons.forEach((icon) => icon.classList.remove("active"));
   }
 });
 
 // Klick på ikon → markera active
-mobileIcons.forEach(icon => {
-  icon.addEventListener('click', (e) => {
+mobileIcons.forEach((icon) => {
+  icon.addEventListener("click", (e) => {
     e.stopPropagation();
-    
+
     // Toggle 'active' på den klickade ikonen
-    if (icon.classList.contains('active')) {
-      icon.classList.remove('active');
+    if (icon.classList.contains("active")) {
+      icon.classList.remove("active");
     } else {
       // Ta bort 'active' från alla andra
-      mobileIcons.forEach(i => i.classList.remove('active'));
-      icon.classList.add('active');
+      mobileIcons.forEach((i) => i.classList.remove("active"));
+      icon.classList.add("active");
     }
   });
 });
 
 // Klick utanför stänger menyn och resetar active
-document.addEventListener('click', (e) => {
+document.addEventListener("click", (e) => {
   if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-    navMenu.classList.remove('active');
-    menuToggle.classList.remove('active');
-    mobileIcons.forEach(icon => icon.classList.remove('active'));
+    navMenu.classList.remove("active");
+    menuToggle.classList.remove("active");
+    mobileIcons.forEach((icon) => icon.classList.remove("active"));
   }
 });
 
-
-// Desktop 
-const desktopDropdown = document.querySelector('.nav_item_dropdown');
-const desktopLink = desktopDropdown.querySelector('.nav_link');
+// Desktop
+const desktopDropdown = document.querySelector(".nav_item_dropdown");
+const desktopLink = desktopDropdown.querySelector(".nav_link");
 
 // Klick på "Mer ▾"
-desktopLink.addEventListener('click', (e) => {
+desktopLink.addEventListener("click", (e) => {
   e.preventDefault();
-  desktopDropdown.classList.toggle('active');
+  desktopDropdown.classList.toggle("active");
 });
 
 // Klick utanför stänger dropdown
-document.addEventListener('click', (e) => {
+document.addEventListener("click", (e) => {
   if (!desktopDropdown.contains(e.target)) {
-    desktopDropdown.classList.remove('active');
+    desktopDropdown.classList.remove("active");
   }
 });

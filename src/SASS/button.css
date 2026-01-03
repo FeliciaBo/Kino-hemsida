@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+.primarybtn {
+  background-color: #179A90;
+  color: #080B10;
+  font-family: "semi-bold Open sans", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  height: 4rem;
+  width: 13rem;
+  border: 1px solid #080B10;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.primarybtn:hover {
+  background-color: #39C2B7;
+}
+
+.secondarybtn {
+  background-color: #080B10;
+  color: #626C7B;
+  font-family: "semi-bold Open sans", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  height: 4rem;
+  width: 13rem;
+  border: 1px solid #626C7B;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.secondarybtn:hover {
+  color: #39C2B7;
+  border-color: #39C2B7;
+}
+
+.tagsbtn {
+  background-color: #080B10;
+  color: #DD6031;
+  font-family: "semi-bold Open sans", sans-serif;
+  height: 2rem;
+  width: auto;
+  font-size: 16px;
+  border: 1.5px solid #DD6031;
+  border-radius: 30px;
+  padding: 6px 14px;
+  margin: 3px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.tagsbtn:hover {
+  color: #080B10;
+  border-color: #FF7F4E;
+  background-color: #FF7F4E;
+}
+.tagsbtn:active {
+  background-color: #DD6031;
+  color: #080B10;
+  border-color: #DD6031;
+}/*# sourceMappingURL=button.css.map */

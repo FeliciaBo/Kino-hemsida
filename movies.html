@@ -5,16 +5,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Filmsida</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
 </head>
 
 <body>
   <div class="header-container"></div>
 
 
-  <div class="movies-wrapper">
-    <div class="movie__page__movies"></div>
-  </div>
-<div class="footer__container"></div>
+
+  <section>
+    <div class="disclaimer">
+      <svg class="info-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="11" fill="none" stroke="#000" stroke-width="1.2" />
+        <rect x="11.4" y="9" width="1.2" height="7" rx="0.6" fill="#000" />
+        <circle cx="12" cy="6.5" r="1" fill="#000" />
+      </svg> Biljetter betalas alltid på plats, bokning sker på webben, via telefon eller på plats
+    </div>
+  </section>
+
+  <section>
+    <div class="tags">
+      <div class="tagsbtn">Aktuellt</div>
+      <div class="tagsbtn">Barnfilmer</div>
+      <div class="tagsbtn">Klassiker</div>
+    </div>
+  </section>
+
+  <section class="filters-section">
+    <div class="filters">
+      <div class="filters__filter date">Välj dag <i class='fas'>&#xf107;</i></div>
+      <div class="filters__filter time">Välj tid <i class='fas'>&#xf107;</i></div>
+    </div>
+
+    <div class="search__bar">
+      <div class="search__input__wrapper">
+        <input class="search__bar__movie" type="text" placeholder="Search movies..." id="searchInputMovies" />
+        <button type="button" class="search__icon-button" id="searchBtnMovies">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="movies-wrapper">
+      <div class="movie__page__movies"></div>
+    </div>
+
+    <div class="button_films">
+      <button class="secondarybtn">Mer filmer</button>
+    </div>
+  </section>
+
+  <div class="footer__container"></div>
   <script type="module" src="/src/main.js"></script>
 </body>
 

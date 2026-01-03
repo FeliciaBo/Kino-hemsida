@@ -115,7 +115,7 @@ function renderMovies() {
   if (!moviesWrapper) return;
   clearMovies();
 
-  // Sortera alla filmer efter betyg, högst först
+  // Sorterar alla filmer efter betyg, högst först
   const sortedMovies = [...store.allMovies].sort(
     (a, b) => b.vote_average - a.vote_average
   );
@@ -125,7 +125,6 @@ function renderMovies() {
     createPoster(movie, moviesWrapper)
   );
 }
-
 
 function clearMovies() {
   if (!moviesWrapper) return;

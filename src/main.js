@@ -114,8 +114,18 @@ renderMovies();
 function renderMovies() {
   if (!moviesWrapper) return;
   clearMovies();
-  store.allMovies.forEach((movie) => createPoster(movie, moviesWrapper));
+
+  // Sorterar alla filmer efter betyg, högst först
+  const sortedMovies = [...store.allMovies].sort(
+    (a, b) => b.vote_average - a.vote_average
+  );
+
+  // Topp 10 hamnar automatiskt överst
+  sortedMovies.forEach((movie) =>
+    createPoster(movie, moviesWrapper)
+  );
 }
+
 
 function clearMovies() {
   if (!moviesWrapper) return;

@@ -1,3 +1,180 @@
-<header>
-    <a href="/movies.html">Filmsida</a>
+<header class="header">
+    <div class="header_inner">
+
+        <a href="/" class="logo">
+            <img src="img/Exclude.png" alt="Kino">
+        </a>
+
+
+        <nav class="nav_desktop">
+            <ul class="nav_list">
+                <li class="nav_item">
+                    <a href="#" class="nav_link">Evenemang</a>
+                </li>
+
+                <li class="nav_item">
+                    <a href="/movies.html" class="nav_link">Filmer</a>
+                </li>
+                <li class="nav_item_dropdown">
+                    <a href="#" class="nav_link">
+                        Mer
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="./about.html">Om biografen</a></li>
+                        <li><a href="#">Erbjudanden</a></li>
+                        <li><a href="#">Kontakt & oss</a></li>
+                        <li><a href="#">Mat & Dryck</a></li>
+                        <li><a href="#">Presentkort</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+
+        <div class="header_actions">
+            <a href="#" class="login">Logga in</a>
+            <button class="lang">Umeå ▾</button>
+        </div>
+    </div>
+
+    <nav class="mobile-nav">
+        <!-- Hus -->
+        <a href="/index.html" class="mobile-nav_item home">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
+                <path d="M12 3l9 8h-3v9h-12v-9h-3z" />
+            </svg>
+        </a>
+
+        <!-- Filmrulle -->
+        <a href="/movies.html" class="mobile-nav_item movies">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="icon">
+                <path
+                    d="M30.335 26.445c-0.128-0.221-0.538-0.289-1.231-0.202-1.275 0.165-2.201-0.251-2.778-1.251-0.437-0.756-0.55-1.516-0.339-2.28s0.836-1.854 1.874-3.272l0.649-0.904c1.928-2.663 2.323-4.979 1.186-6.95-1.157-2.006-4.5-1.837-6.903-0.806-1.944-4.009-6.04-6.78-10.793-6.78-6.628 0-12 5.373-12 12s5.372 12 12 12c6.627 0 12-5.373 12-12 0-1.469-0.277-2.871-0.76-4.171 0.811-0.291 1.781-0.502 2.696-0.536 1.202-0.044 2.29 0.208 2.722 0.956 0.963 1.669 0.498 3.641-1.395 5.913l-0.388 0.466c-2.214 2.657-2.743 4.984-1.591 6.982 0.466 0.806 1.207 1.381 2.225 1.727 1.018 0.345 1.879 0.312 2.585-0.096 0.35-0.202 0.431-0.468 0.241-0.796zM6.5 18.562c-1.381 0-2.5-1.119-2.5-2.5 0-1.38 1.119-2.5 2.5-2.5s2.5 1.119 2.5 2.5c0 1.381-1.119 2.5-2.5 2.5zM12 24.062c-1.381 0-2.5-1.119-2.5-2.5s1.119-2.5 2.5-2.5 2.5 1.119 2.5 2.5-1.119 2.5-2.5 2.5zM11.020 16.062c0-0.552 0.449-1 1.001-1s1 0.447 1 1c0 0.553-0.448 1-1 1s-1.001-0.447-1.001-1zM12 13.062c-1.381 0-2.5-1.119-2.5-2.5s1.119-2.5 2.5-2.5 2.5 1.119 2.5 2.5c0 1.381-1.119 2.5-2.5 2.5zM17.5 18.562c-1.381 0-2.5-1.119-2.5-2.5 0-1.38 1.119-2.5 2.5-2.5s2.5 1.119 2.5 2.5c0 1.381-1.119 2.5-2.5 2.5z" />
+            </svg>
+        </a>
+        <!-- Kalender -->
+        <a href="#" class="mobile-nav_item events">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
+                <rect x="3" y="5" width="18" height="16" rx="2" ry="2" />
+                <line x1="3" y1="9" x2="21" y2="9" />
+                <line x1="8" y1="1" x2="8" y2="5" />
+                <line x1="16" y1="1" x2="16" y2="5" />
+            </svg>
+        </a>
+
+        <!-- Hamburger-meny -->
+
+        <div class="menu-icon" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <ul class="nav-menu">
+        <li class="nav-menu-top">
+            <a href="#">
+                <!-- vänsterpil ikon -->
+                <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <polyline points="15,18 9,12 15,6" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                Mer alternativ
+            </a>
+        </li>
+        <li>
+            <a href="./about.html">
+                <!-- informationsikon -->
+                <svg class="icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" />
+                    <line x1="12" y1="8" x2="12" y2="12" stroke="currentColor" stroke-width="2" />
+                    <circle cx="12" cy="16" r="1" fill="currentColor" />
+                </svg>
+                Om Biografen
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <!-- Procent ikon -->
+                <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="4" y1="20" x2="20" y2="4" stroke="currentColor" stroke-width="2" />
+                    <circle cx="7" cy="7" r="2" fill="currentColor" />
+                    <circle cx="17" cy="17" r="2" fill="currentColor" />
+                </svg>
+                Erbjudanden
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <!-- kontakta oss ikon -->
+                <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c0.12 0.81 0.3 1.6 0.54 2.37a2 2 0 0 1-0.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-0.45c0.77 0.24 1.56 0.42 2.37 0.54a2 2 0 0 1 1.72 2z"
+                        fill="none" stroke="currentColor" stroke-width="2" />
+                </svg>
+                Kontakta oss
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <!-- Popcorn ikon med ränder -->
+                <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="6,9 18,9 16.5,19.5 7.5,19.5" fill="none" stroke="currentColor" stroke-width="2" />
+                    <line x1="8" y1="9" x2="9" y2="19.5" stroke="currentColor" stroke-width="1" />
+                    <line x1="10" y1="9" x2="11" y2="19.5" stroke="currentColor" stroke-width="1" />
+                    <line x1="12" y1="9" x2="13" y2="19.5" stroke="currentColor" stroke-width="1" />
+                    <line x1="14" y1="9" x2="15" y2="19.5" stroke="currentColor" stroke-width="1" />
+                    <circle cx="8.5" cy="7" r="1.2" fill="currentColor" />
+                    <circle cx="12" cy="5.5" r="1.2" fill="currentColor" />
+                    <circle cx="15.5" cy="7" r="1.2" fill="currentColor" />
+                </svg>
+                Mat & Dryck
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <!-- Present med tydlig rosett -->
+                <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="8" width="16" height="12" fill="none" stroke="currentColor" stroke-width="2" />
+                    <line x1="12" y1="8" x2="12" y2="20" stroke="currentColor" stroke-width="2" />
+                    <line x1="4" y1="14" x2="20" y2="14" stroke="currentColor" stroke-width="2" />
+                    <path d="M12 8 C11 6, 10 6, 10 8 C9 6, 11 5, 12 6 Z" fill="currentColor" />
+                    <path d="M12 8 C13 6, 14 6, 14 8 C15 6, 13 5, 12 6 Z" fill="currentColor" />
+                    <circle cx="12" cy="7.5" r="1" fill="currentColor" />
+                </svg>
+                Presentkort
+            </a>
+        </li>
+
+
+
+        <li>
+            <a href="#">
+                <!-- login ikon -->
+                <svg class="icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+                    <path d="M4 20c0-4 8-4 8-4s8 0 8 4" fill="none" stroke="currentColor" stroke-width="2" />
+                </svg>
+                Logga in
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <!-- plats ikon -->
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                    <circle cx="12" cy="9" r="2" fill="currentColor" />
+                </svg>
+                Plats
+            </a>
+        </li>
+    </ul>
+
+
+
 </header>

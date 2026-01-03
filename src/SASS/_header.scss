@@ -1,3 +1,338 @@
-header {
-    background-color: aqua;
+@use './mixins_variables.scss' as *;
+
+.header_inner {
+  display: none;
+}
+
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: $card-color;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 3000;
+  padding-bottom: 3rem;
+}
+
+.mobile-nav_item {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  color: $secondary-text-color;
+  transition: color 0.3s;
+
+  .icon {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: currentColor; 
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.3s, stroke 0.3s, color 0.3s;
+    pointer-events: none;
+  }
+
+  &:hover {
+    color: $primary-text-color; 
+    .icon {
+      transform: scale(1.2);
+    }
+  }
+
+  &.active {
+    color: $primary-text-color; 
+    .icon {
+      stroke: $primary-text-color; 
+      transform: scale(1.2); 
+    }
+  }
+}
+
+
+
+.menu-icon {
+  display: block;
+  cursor: pointer;
+  background-color: $card-color;
+
+ span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: $secondary-text-color;
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+  &.active {
+    display: block;
+  }
+}
+.menu-icon:hover span {
+  background-color: $primary-text-color;
+}
+
+
+.menu-icon.active span {
+  background-color: $primary-text-color;
+}
+
+
+.nav-menu {
+   display: none;
+  position: fixed;
+  inset: 0; 
+  background-color: $background-color;
+  z-index: 2000;
+  
+  flex-direction: column;
+  justify-content: space-between; 
+  padding:
+    2rem
+    1rem
+    calc(100px + env(safe-area-inset-bottom));
+  
+
+  .nav-menu-top {
+     font-weight: bold;
+    text-align: center;
+    margin-bottom: auto; 
+  }
+
+  .nav-menu-top a {
+     display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: $primary-text-color;
+      text-decoration: none;
+  }
+
+  ul {
+       list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    margin-top: auto;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+      border-radius: 12px;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+
+    &:hover,
+    &:focus-within {
+      background-color: $card-color;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  li a {
+     display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: $primary-text-color;
+      font-family: $font-subheader;
+      font-size: 14px;
+      flex-grow: 1;
+      text-align: left;
+      transition: color 0.3s;
+
+
+    .icon {
+      width: 18px;
+        height: 18px;
+        fill: currentColor;     
+        stroke: currentColor;   
+        stroke-width: 2;
+        transition: transform 0.3s, color 0.3
+    }
+  }
+
+  li::after {
+    content: '>';
+    font-size: 14px;
+    color: $primary-text-color;
+    margin-left: 0.5rem;
+  }
+
+  .nav-menu-top::after {
+    content: none;
+  }
+}
+
+.nav-menu li:nth-child(7) {
+  margin-top: 2rem;
+}
+
+.nav-menu.active {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+
+  body { 
+    padding-top: calc(50px + 2rem); 
+    font-family: $font-body;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  .nav-menu {
+    display: none !important;
+  }
+
+  .header {
+    width: 100%;
+    background: $background-color;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    
+
+    &_inner {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 2rem;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .nav_desktop {
+      display: flex;
+      align-items: center;
+
+      .nav_list {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 2rem;
+
+        .nav_link {
+          text-decoration: none;
+          color: $secondary-text-color;
+          font-weight: 500;
+          cursor: pointer;
+          padding: 0;
+          border: none;
+          background: none;
+        }
+
+        .nav_item_dropdown {
+          position: relative;
+
+          .nav_link {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+
+            &::after {
+              content: "▾";
+              font-size: 1rem;
+              display: inline-block;
+              transition: transform 0.3s;
+            }
+          }
+
+          &.active .nav_link::after {
+            transform: rotate(180deg);
+          }
+
+          .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            transform: translateX(-50%);
+            background: $background-color;
+            list-style: none;
+            padding: 0.5rem 0;
+            margin-left: 4rem;
+            min-width: 150px;
+            border-radius: 4px;
+            z-index: 1200;
+
+            li {
+              width: 100%;
+              text-align: left;
+              padding: 0.5rem 1rem;
+
+              a {
+                color: $secondary-text-color;
+                text-decoration: none;
+
+              }
+            }
+          }
+        }
+
+        .nav_item_dropdown.active .dropdown {
+          display: block;
+        }
+
+        .nav_item_dropdown>.nav_link {
+          transition: color 0.3s; 
+        }
+
+        
+        .nav_item_dropdown>.nav_link:hover {
+          color: $primary-text-color; 
+        }
+
+        .nav_item_dropdown.active>.nav_link {
+          color: $primary-text-color;
+        }
+      }
+    }
+
+    .header_actions {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+
+      .login {
+        color: $secondary-text-color;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .lang {
+        background: none;
+        border: none;
+        color: $secondary-text-color;
+        cursor: pointer;
+        font-weight: 500;
+      }
+    }
+  }
 }

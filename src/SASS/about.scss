@@ -1,0 +1,149 @@
+@use './mixins_variables' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: $background-color;
+  color: $primary-text-color;
+  margin: 0;
+  width: 100%;
+  font-family: $font-body;
+  font-weight: 400;
+
+}
+.logo-type{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 2em;
+}
+/* ===== MOBILE FIRST ===== */
+.about_us__field,
+.salon_field,
+.history_field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $card-color;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+}
+
+.about-us,
+.salon,
+.history {
+  max-width: 90%;
+  line-height: 1.6;
+}
+
+.map-section {
+  padding: 1rem;
+}
+
+.map_salon {
+  width: 100%;
+  margin: 0 auto;
+
+  .map_img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+}
+.supplies_img,
+.salon_img,
+.snacks_img{
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+@include desktop {
+  .supplies_img,
+  .salon_img,
+  .snacks_img {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+}
+.outside-image {
+  width: 100%;
+  padding: 1rem;
+}
+
+.image_outside {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== TABLET / DESKTOP ===== */
+@include desktop {
+  body {
+    max-width: 1300px;
+    margin: 6rem auto 0;
+  }
+.logo-type{
+  width: 307px;
+  height: 307px;
+  margin-bottom: -8rem;
+  margin-top: 1rem;
+}
+  .about_us__field, 
+  .salon_field,
+  .history_field {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+
+  .about-us, 
+  .salon,
+  .history {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 892px;
+    font-size: 16px;
+    
+  }
+
+  .map_salon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; 
+ height: 781px;
+ width: 1172px;
+}
+
+.salon_img{
+  padding-top: 1rem;
+  height: 509px;
+  width: 509px;
+}
+
+.snacks_img{
+  padding-top: 1rem;
+  height: 463px;
+  width: 653px;
+}
+.outside_img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 1rem;
+  height: 820px;
+  width: 1172px;
+}
+
+}

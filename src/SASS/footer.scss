@@ -9,14 +9,12 @@
 }
 
 .footer__div {
-    margin: 1rem;
+    margin: 1rem 0rem 0rem 0rem;
     background-color: $card-color;
     border-radius: 5px;
     color: $primary-text-color;
-
-    @media (min-width: 768px) {
-        margin: 2rem;
-    }
+    width: 100%;
+    margin: 2rem auto 0 auto;
 }
 
 .footer__all-lists {

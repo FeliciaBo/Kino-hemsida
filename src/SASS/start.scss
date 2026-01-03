@@ -1,44 +1,96 @@
+@use "./mixins_variables.scss" as *;
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    background-color: #080B10;
-    color: #f5f7fa;
-    margin: 0;
-    width: 100%;
+  background-color: #080b10;
+  color: #f5f7fa;
+  margin: 0 auto;
+  width: 100%;
 }
 
+/* .search__bar {
+  display: flex;
+  max-width: 500px;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+}
 
+.search__input__wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search__bar__movie {
+  width: 100%;
+  background-color: #0e131b;
+  border: 1px solid #626c7b;
+  border-radius: 0.5rem;
+  padding: 0.75rem 2.75rem 0.75rem 1rem;
+  min-height: 48px;
+  max-height: 64px;
+  color: #f5f7fa;
+  font-size: 1rem;
+}
+
+.search__bar__movie::placeholder {
+  color: #9aa4b2;
+}
+
+.search__bar__movie:focus {
+  outline: none;
+  border-color: #dd6031;
+}
+
+.search__icon-button {
+  position: absolute;
+  right: 0.9rem;
+  top: 35%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #9aa4b2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.search__icon-button:hover {
+  color: #dd6031;
+} */
 
 .button_frontpage {
-    display: flex;
-    justify-content: center;
-    gap: 40px
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .disclaimer {
-    display: flex;
-    align-items: center;
-    background-color: #179A90;
-    border-radius: 10px;
-    padding: 1rem;
-    width: 90vw;
-    margin: 1rem auto;
-    color: #080B10;
-    font-size: 1rem;
-    line-height: 1.4;
+  display: flex;
+  align-items: center;
+  background-color: #179a90;
+  border-radius: 10px;
+  padding: 1rem;
+  color: #080b10;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-family: $font-body;
+  font-weight: 500;
+  max-width: 1200px;
+  margin: 2rem auto;
 }
 
-
 .info-icon {
-    width: 32px;
-    height: 32px;
-    margin-right: 1rem;
-    flex-shrink: 0;
-    background: transparent;
-    fill: none;   
+  width: 32px;
+  height: 32px;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  background: transparent;
+  fill: none;
 }
 
 
@@ -63,8 +115,18 @@ body {
         max-width: 1248px;
     }
 
-    .info-icon {
+ }
+    
+@media (min-width: 768px) {
+  .info-icon {
     margin: 0;
-    margin-right: 1rem;  
+    margin-right: 1rem;
+  }
+
+.disclaimer {
+    margin: 1rem auto;
+    width: calc(100% - 4rem);
 }
+
+
 }

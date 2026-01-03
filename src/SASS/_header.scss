@@ -191,6 +191,10 @@
 
 @media (min-width: 768px) {
 
+  body { 
+    padding-top: calc(50px + 2rem); 
+  }
+
   .mobile-nav {
     display: none;
   }

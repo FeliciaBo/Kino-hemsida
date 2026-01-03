@@ -18,7 +18,7 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-top: 2em;
 }
 /* ===== MOBILE FIRST ===== */
 .about_us__field,
@@ -90,12 +90,12 @@ body {
 @include desktop {
   body {
     max-width: 1300px;
-    margin: 0 auto;
+    margin: 6rem auto 0;
   }
 .logo-type{
   width: 307px;
   height: 307px;
-  margin-bottom: -7rem;
+  margin-bottom: -8rem;
   margin-top: 1rem;
 }
   .about_us__field, 

@@ -5,12 +5,13 @@
     color: $background-color;
     font-family: $font-subheader;
     font-weight: bold;
-    font-size: 20px;
-    height: 4rem;
-    width: 13rem;
+    font-size: 1rem;
+    height: 3rem;
+    width: 11rem;
     border: 1px solid $background-color;
     border-radius: 10px;
     cursor: pointer;
+    margin: 1rem 1rem 3rem 1rem;
 
     &:hover {
         background-color: $blue-hover-color;
@@ -22,12 +23,13 @@
     color: $secondary-text-color;
     font-family: $font-subheader;
     font-weight: bold;
-    font-size: 20px;
-    height: 4rem;
-    width: 13rem;
+    font-size: 1rem;
+    height: 3rem;
+    width: 11rem;
     border: 1px solid $secondary-text-color;
     border-radius: 10px;
     cursor: pointer;
+    margin: 1rem 1rem 3rem 1rem;
 
     &:hover {
         color: $blue-hover-color;
@@ -44,7 +46,6 @@
     border: 1px solid $orange-color;
     border-radius: 30px;
     padding: 6px 14px;
-    margin: 3px;
     cursor: pointer;
     transition: 0.2s;
 

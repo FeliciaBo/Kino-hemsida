@@ -10,6 +10,8 @@ import { createPoster } from "./Features/createPoster";
 import { initGenres, getGenreNames } from "./API/genreID";
 import { handleLiveSearch } from "./Features/handleLiveSearch";
 import { bindBackdrops, initCarousel } from "./Features/carousel";
+import { initTagFilter } from "./Features/handleTagFilter";
+
 
 // 1. Hämta all data först (Genrer och Filmer)
 await initGenres();
@@ -110,6 +112,13 @@ if (moviesWrapper && searchInput && searchBtn) {
 
 // 4. Slutligen, rendera posters (nu när containern garanterat finns)
 renderMovies();
+
+initTagFilter({
+  store,
+  clearMovies,
+  renderFilteredMovieList
+});
+
 
 function renderMovies() {
   if (!moviesWrapper) return;
